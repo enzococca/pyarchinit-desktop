@@ -1,16 +1,14 @@
-# This is a sample Python script.
-
-# Press Maiusc+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from __future__ import absolute_import
+import sys
+from PyQt5 import QtWidgets, uic
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Ui(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(Ui, self).__init__() # Call the inherited classes __init__ method
+        uic.loadUi('SU.ui', self) # Load the .ui file
+        self.show() # Show the GUI
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+app = QtWidgets.QApplication(sys.argv)
+window = Ui()
+app.exec_()
